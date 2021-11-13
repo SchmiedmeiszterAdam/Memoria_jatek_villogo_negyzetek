@@ -1,28 +1,47 @@
 @charset "utf-8";
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-main{
+
+main {
     width: 100vw;
     height: 100vh;
     background-color: aquamarine;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
-table{
+
+table {
     width: 60%;
     aspect-ratio: 1/1;
     max-width: 600px;
 }
-table tr{
+
+table tr {
     width: 100%;
     height: calc(100% / 3);
 }
-table tr td{
+
+table tr td {
     background-color: darkcyan;
     border-radius: 8px;
     cursor: pointer;
+}
+
+#gomb-tarolo {
+    position: absolute;
+}
+
+#kezd {
+    font-size: 30px;
+}
+
+@media screen and (max-width:600px) {
+    table {
+        width: 100%;
+    }
 }

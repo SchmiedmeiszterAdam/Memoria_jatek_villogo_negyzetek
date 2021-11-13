@@ -22,6 +22,9 @@ class Elem {
     szintValtasRossz() {
         this.elem.css("background-color", "red")
     }
+    szintValtasJo() {
+        this.elem.css("background-color", "green")
+    }
     szintVissza() {
         this.elem.css("background-color", "darkcyan")
     }

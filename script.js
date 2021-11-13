@@ -1,5 +1,6 @@
 $(function () {
     let id = 0
+    let statisztika = 0
     let kattintottId
     const elemek = []
     const villantott = []
@@ -17,7 +18,13 @@ $(function () {
             index++
         }
     }
-    ujatAd()
+    $("#kezd").on("click",jatek)
+    function jatek(){
+        villantott.splice(0,villantott.length)
+        console.log(villantott)
+        ujatAd()
+        $("#kezd").css("display","none")
+    }
     function ujatAd(){
         id = 0
         let szam = Math.floor(Math.random()*9)
@@ -53,12 +60,15 @@ $(function () {
                 if (kattintSzamlalo === villantott.length) {
                     kattinthato()
                     ujatAd()
+                    statisztika++
                 }
-                elemek[kattintottId].szintValtas()
+                elemek[kattintottId].szintValtasJo()
             }
             else {
                 elemek[kattintottId].szintValtasRossz()
                 kattinthato()
+                $("#kezd").css("display","block")
+                setTimeout(function(){alert("Rosszra kattintottál. Az eredményed: "+ statisztika)}, 200)
             }
             setTimeout(vissza, 100)
         }
